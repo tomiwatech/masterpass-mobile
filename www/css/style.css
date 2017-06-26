@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+
+.hello{
+	background: #3f51b5;
+}
+
+#masterImg{
+	width: 35px;
+	float: right;
+}
+ #master{
+ 	padding-left: 4pc;
+ 	color:#ea001b
+ }
+
+.qrcode{
+	background: #3f51b5;
+}

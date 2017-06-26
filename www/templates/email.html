@@ -1,0 +1,38 @@
+<ion-view>
+    <ion-header-bar  class="bar-stable" >
+        <img src="img/master2.png" id="masterImg">
+        <h4 id="master"><b>MASTERPASS</b></h4>
+      </ion-header-bar>
+
+     <ion-content class="hello padding">
+
+           
+     <h4 style="text-align: center;color:white ">SEND MAIL TO MERCHANT</h4>
+        <br>
+        <div class="list">
+           <label class="item item-input">
+           <input type="text" ng-model="settings.email" placeholder="Enter your email">
+           </label>
+         <br>
+
+           <label class="item item-input">
+           <input type="text" ng-model="settings.cc" placeholder="Enter CC">
+           </label>
+
+          <br>
+
+           <label class="item item-input">
+           <input type="text" ng-model="settings.bcc" placeholder="Enter BCC">
+           </label>
+      </div>
+
+   <button class="button button-block" ng-click="sendmail(settings)" style="color: white;background: #ea001b">Send Mail</button>
+  
+   <a class="button button-block" href="#/register" style="color: white;background: #ea001b">Home</a>
+
+   {{success}}
+
+
+     </ion-content>
+
+</ion-view>

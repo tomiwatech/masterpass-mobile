@@ -1,0 +1,121 @@
+<ion-view >
+     <ion-header-bar  class="bar-stable" >
+        <img src="img/master2.png" id="masterImg">
+        <h4 id="master"><b>MASTERPASS</b></h4>
+      </ion-header-bar>
+ 
+      <ion-content class='hello padding' scroll='true' ng-controller='SignatureCtrl' >
+       <h3 style="text-align: center;color: white">Application Form</h3>
+       <h4  style="color:white;text-align: center">SECTION 1 : Company Information</h4>
+
+       <div class="list">
+           <label class="item item-input">
+           <input type="text" ng-model="settings.comp" placeholder="Company or Merchant Name">
+           </label>
+         <br>
+
+           <label class="item item-input">
+           <input type="text" ng-model="settings.address" placeholder="Business Address">
+           </label>
+      </div>
+     
+      <label class = "item item-input item-select">
+         <div class = "input-label">
+            Industry
+         </div>
+        
+         <select>
+            <option>Stores/Supermarket</option>
+            <option selected>Fuel Station</option>
+            <option>Church/NGO</option>
+            <option>Restuarant</option>
+            <option>Fast Food</option>
+            <option>Hospital</option>
+            <option>WholeSale</option>
+            <option>Hotels/Guest Houses</option>
+            <option>Airline/Operators</option>
+            <option>Telecoms</option>
+            <option>Logistics</option>
+            <option>Airline(Travel Agenecies)</option>
+         </select>
+   </label>
+      <br>
+    <h4  style="color:white;text-align: center">SECTION 2 : Contact information</h4>
+    <p style="color:white">This Section gathers information about the contact of the organization</p>
+
+        <div class="list">
+           <label class="item item-input">
+           <input type="text" placeholder="Name of primary contact person">
+           </label>
+         <br>
+
+           <label class="item item-input">
+           <input type="text" ng-model="settings.design" placeholder="Designation">
+           </label>
+          <br>
+
+           <label class="item item-input">
+           <input type="text" ng-model="settings.dob" placeholder="Date of Birth">
+           </label>
+          <br>
+          <label class="item item-input">
+           <input type="number" placeholder="Office Telephone/Extension">
+           </label>
+         <br>
+
+           <label class="item item-input">
+           <input type="number" placeholder="Mobile Phone">
+           </label>
+          <br>
+           <label class="item item-input">
+           <input type="email" placeholder="Email Address">
+           </label>
+      </div>
+
+       <h4  style="color:white;text-align: center">SECTION 3 : Bank Details</h4>
+       <p style="color:white;text-align: center">Bank Account Details</p>
+          <label class="item item-input">
+           <input type="number" placeholder="Account Number">
+           </label>
+          <br>
+           <label class="item item-input">
+           <input type="text" placeholder="Account Name">
+           </label>
+           <br>
+           <label class="item item-input">
+           <input type="number" placeholder="BVN">
+           </label>
+           <br>
+            
+      <label class = "item item-input item-select">
+         <div class = "input-label">
+            Account Type
+         </div>
+        
+         <select>
+            <option>Savings</option>
+            <option>Current</option>
+         </select>
+   </label>
+
+
+       <br>
+       <p style="color: white">Enter Your Signature in the box below</p>
+       <canvas id='signatureCanvas' width='300' height='180' ng-model="sign" style='background: white'></canvas>
+          
+              <a class='button button-block' ng-click='clearCanvas()'>Clear</a>
+              <a class='button button-block' ng-click='saveCanvas()'>Save</a>
+          
+          <br>
+          <!-- <img ng-src='{{signature}}'/> -->
+    <p style="color: white" ng-if="settings.comp">I.....{{settings.comp}}..... hereby certify that the information provided above is true and accurate</p>
+     <div>
+       <p style="color: white" ng-if="signature">Signature: <img ng-src='{{signature}}' style="background: white" /> Designation: {{settings.design}}</p>
+     </div>
+
+  <button class="button button-block" ng-click="generateQR(settings)" style="color: white;background: #ea001b">Submit</button>
+  <br>
+
+      </ion-content>
+
+</ion-view>
